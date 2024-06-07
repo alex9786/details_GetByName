@@ -52,12 +52,12 @@ public class EmployeeController {
 	public List<Employee> getEmployee(@RequestParam (value="name",required=false)String name){
 		return empservice.getEmployee(name);
 	}
-	
-	@GetMapping("/getJob")
-	public List<Employee> getEmp(@RequestParam(value="job",required=false) String job){
-		return empservice.getEmp(job);
-	}
-	
+//	
+//	@GetMapping("/getJob")
+//	public List<Employee> getEmp(@RequestParam(value="job",required=false) String job){
+//		return empservice.getEmp(job);
+//	}
+//	
 	/***************************DTO Class******************************/
 	
 	@PostMapping("/postDto")
@@ -70,6 +70,21 @@ public class EmployeeController {
 		return empservice.getDto(id);
 	}
 
+	@GetMapping("/getSalary/{salary}")
+	public DtoClass getSalary(@PathVariable int salary) {
+		return empservice.getSalary(salary);
+	}
+	
+	@GetMapping("/getjob")
+	public List<DtoClass> getById(@RequestParam (value="job",required=false)String job){
+	    return empservice.getById(job);
+	}
+	
+	@PutMapping("/updateDto")
+	public DtoClass update (@RequestBody DtoClass dtoClass){
+		return empservice.update(dtoClass);
+	}
+	
 	
 	
 

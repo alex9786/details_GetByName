@@ -18,11 +18,18 @@ public interface EmployeeService {
 
 	List<Employee> getEmployee(String name);
 
-	List<Employee> getEmp(String job);
+//	List<Employee> getEmp(String job);
 	
 	DtoClass dtopost(DtoClass dto);
 
 	DtoClass getDto(int id);
+
+	DtoClass getSalary(int salary);
+
+	List<DtoClass> getById(String job);
+
+	DtoClass update(DtoClass dtoClass);
+
 
 
 	
